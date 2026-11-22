@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 230" width="850" height="230">
+  <defs>
+    <!-- Card surface gradients -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141122" />
+      <stop offset="100%" stop-color="#110e1a" />
+    </linearGradient>
+
+    <!-- Top highlight lines -->
+    <linearGradient id="top-glow-left" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#26203a" stop-opacity="0.2" />
+      <stop offset="40%" stop-color="#a855f7" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#26203a" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="top-glow-right" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#26203a" stop-opacity="0.2" />
+      <stop offset="40%" stop-color="#8b5cf6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#26203a" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'Consolas', 'JetBrains Mono', monospace; }
+    .font-serif { font-family: 'Georgia', serif; }
+    .font-sans { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; }
+
+    /* Pulsing status aura */
+    @keyframes pulse-aura {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50% { opacity: 0.15; transform: scale(2.3); }
+    }
+    .pulse-purple {
+      transform-origin: 36px 197px;
+      animation: pulse-aura 2.4s ease-in-out infinite;
+    }
+    .pulse-violet {
+      transform-origin: 471px 197px;
+      animation: pulse-aura 2.4s ease-in-out infinite 0.6s;
+    }
+  </style>
+
+  <!-- ==================== LEFT CARD: ECLIPSE ==================== -->
+  <g id="card-eclipse">
+    <!-- Card Surface (414x229) with 1px border -->
+    <rect x="0.5" y="0.5" width="414" height="229" rx="8" fill="url(#card-bg)" stroke="#26203a" stroke-width="1" />
+    <!-- 1px Top Glow Highlight -->
+    <line x1="20" y1="1" x2="394" y2="1" stroke="url(#top-glow-left)" stroke-width="1.2" />
+
+    <!-- Subtle watermark background arc -->
+    <path d="M 330 30 A 80 80 0 0 1 400 130" fill="none" stroke="#8b5cf6" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="3 6" />
+
+    <!-- Vector Icon Badge Container -->
+    <rect x="24" y="24" width="44" height="44" rx="8" fill="#1b162b" stroke="#3d3261" stroke-width="1" />
+    
+    <!-- Vector Logo: Crescent / Eclipsed Moon + Sharp 4-point Star -->
+    <g transform="translate(24, 24)">
+      <!-- Crescent moon vector -->
+      <path d="M 22 10 A 11 11 0 1 0 33 22 A 8.8 8.8 0 1 1 22 10 Z" fill="#c4b5fd" />
+      <!-- Sharp 4-point star in crest opening -->
+      <path d="M 29.00 8.50 Q 29.00 14.00 34.50 14.00 Q 29.00 14.00 29.00 19.50 Q 29.00 14.00 23.50 14.00 Q 29.00 14.00 29.00 8.50 Z" fill="#a855f7" />
+    </g>
+
+    <!-- Card Title -->
+    <text x="80" y="44" class="font-serif" font-size="20" font-weight="700" fill="#f3e8ff" letter-spacing="2.2">ECLIPSE</text>
+
+    <!-- Tech Tag Pill: RUST / EGUI -->
+    <rect x="80" y="52" width="94" height="19" rx="4" fill="#1d1633" stroke="#3d3261" stroke-width="1" />
+    <text x="127" y="65" text-anchor="middle" class="font-mono" font-size="9" font-weight="700" fill="#c4b5fd" letter-spacing="0.8">RUST / EGUI</text>
+
+    <!-- Description (3 clean lines) -->
+    <text x="24" y="106" class="font-sans" font-size="12" fill="#94a3b8" letter-spacing="0.1">Cross-platform desktop music player with lossless</text>
+    <text x="24" y="126" class="font-sans" font-size="12" fill="#94a3b8" letter-spacing="0.1">multi-format audio extraction, synchronized lyrics,</text>
+    <text x="24" y="146" class="font-sans" font-size="12" fill="#94a3b8" letter-spacing="0.1">and custom dark themes.</text>
+
+    <!-- Bottom Status Line Separator -->
+    <line x1="24" y1="173" x2="390" y2="173" stroke="#221c33" stroke-width="1" />
+
+    <!-- Status Indicator: Animated pulsing purple dot -->
+    <circle cx="36" cy="197" r="4" fill="#a855f7" class="pulse-purple" />
+    <circle cx="36" cy="197" r="3.2" fill="#a855f7" />
+
+    <!-- Status text -->
+    <text x="50" y="201" class="font-mono" font-size="10" font-weight="700" fill="#c4b5fd" letter-spacing="1.4">ACTIVE DEVELOPMENT</text>
+
+    <!-- Right side decorative star -->
+    <path d="M 382.00 193.00 Q 382.00 197.00 386.00 197.00 Q 382.00 197.00 382.00 201.00 Q 382.00 197.00 378.00 197.00 Q 382.00 197.00 382.00 193.00 Z" fill="#8b5cf6" opacity="0.7" />
+  </g>
+
+  <!-- ==================== RIGHT CARD: VESPER ==================== -->
+  <g id="card-vesper">
+    <!-- Card Surface (414x229) with 1px border -->
+    <rect x="435.5" y="0.5" width="414" height="229" rx="8" fill="url(#card-bg)" stroke="#26203a" stroke-width="1" />
+    <!-- 1px Top Glow Highlight -->
+    <line x1="455" y1="1" x2="829" y2="1" stroke="url(#top-glow-right)" stroke-width="1.2" />
+
+    <!-- Subtle watermark background arc -->
+    <path d="M 765 30 A 80 80 0 0 1 835 130" fill="none" stroke="#c4b5fd" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="3 6" />
+
+    <!-- Vector Icon Badge Container -->
+    <rect x="459" y="24" width="44" height="44" rx="8" fill="#1b162b" stroke="#3d3261" stroke-width="1" />
+
+    <!-- Vector Logo: Evening Star with outer rays inside minimal frame -->
+    <g transform="translate(459, 24)">
+      <!-- Outer diamond frame -->
+      <rect x="8" y="8" width="28" height="28" rx="4" fill="none" stroke="#3d3261" stroke-width="1" stroke-dasharray="2 3" />
+      <!-- Secondary 45-degree ray star -->
+      <path d="M 22.00 14.50 L 29.50 22.00 L 22.00 29.50 L 14.50 22.00 Z" fill="#8b5cf6" opacity="0.85" />
+      <!-- Primary 4-point evening star -->
+      <path d="M 22.00 11.00 Q 22.00 22.00 33.00 22.00 Q 22.00 22.00 22.00 33.00 Q 22.00 22.00 11.00 22.00 Q 22.00 22.00 22.00 11.00 Z" fill="#c4b5fd" />
+      <!-- Center starlight core -->
+      <circle cx="22" cy="22" r="1.8" fill="#ffffff" />
+    </g>
+
+    <!-- Card Title -->
+    <text x="515" y="44" class="font-serif" font-size="20" font-weight="700" fill="#f3e8ff" letter-spacing="2.2">VESPER</text>
+
+    <!-- Tech Tag Pill: RUST / LIBMPV -->
+    <rect x="515" y="52" width="108" height="19" rx="4" fill="#1d1633" stroke="#3d3261" stroke-width="1" />
+    <text x="569" y="65" text-anchor="middle" class="font-mono" font-size="9" font-weight="700" fill="#c4b5fd" letter-spacing="0.8">RUST / LIBMPV</text>
+
+    <!-- Description (3 clean lines) -->
+    <text x="459" y="106" class="font-sans" font-size="12" fill="#94a3b8" letter-spacing="0.1">Lightweight native Windows media player,</text>
+    <text x="459" y="126" class="font-sans" font-size="12" fill="#94a3b8" letter-spacing="0.1">subtitle extractor, and custom hybrid video</text>
+    <text x="459" y="146" class="font-sans" font-size="12" fill="#94a3b8" letter-spacing="0.1">codec pipeline.</text>
+
+    <!-- Bottom Status Line Separator -->
+    <line x1="459" y1="173" x2="825" y2="173" stroke="#221c33" stroke-width="1" />
+
+    <!-- Status Indicator: Animated pulsing violet dot -->
+    <circle cx="471" cy="197" r="4" fill="#8b5cf6" class="pulse-violet" />
+    <circle cx="471" cy="197" r="3.2" fill="#8b5cf6" />
+
+    <!-- Status text -->
+    <text x="485" y="201" class="font-mono" font-size="10" font-weight="700" fill="#c4b5fd" letter-spacing="1.4">ACTIVE DEVELOPMENT</text>
+
+    <!-- Right side decorative star -->
+    <path d="M 817.00 193.00 Q 817.00 197.00 821.00 197.00 Q 817.00 197.00 817.00 201.00 Q 817.00 197.00 813.00 197.00 Q 817.00 197.00 817.00 193.00 Z" fill="#a855f7" opacity="0.7" />
+  </g>
+</svg>

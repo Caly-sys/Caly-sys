@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 110" width="850" height="110">
+  <style>
+    .font-mono { font-family: 'Consolas', 'JetBrains Mono', monospace; }
+  </style>
+
+  <!-- Card Surface (850x110) with 1px border -->
+  <rect x="0.5" y="0.5" width="849" height="109" rx="8" fill="#13101e" stroke="#26203a" stroke-width="1" />
+
+  <!-- Top header row -->
+  <path d="M 28.00 20.50 Q 28.00 25.00 32.50 25.00 Q 28.00 25.00 28.00 29.50 Q 28.00 25.00 23.50 25.00 Q 28.00 25.00 28.00 20.50 Z" fill="#8b5cf6" />
+  <text x="40" y="29" class="font-mono" font-size="10.5" font-weight="700" fill="#c4b5fd" letter-spacing="2">CORE DOMAINS &amp; ARSENAL</text>
+  <text x="824" y="29" text-anchor="end" class="font-mono" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.5">LOW-LEVEL ARCHITECTURE</text>
+
+  <!-- Subtle header divider rule -->
+  <line x1="24" y1="42" x2="826" y2="42" stroke="#221b35" stroke-width="1" />
+
+  <!-- 4-point star separators between pill sections -->
+  <path d="M 142.00 69.50 Q 142.00 73.00 145.50 73.00 Q 142.00 73.00 142.00 76.50 Q 142.00 73.00 138.50 73.00 Q 142.00 73.00 142.00 69.50 Z" fill="#8b5cf6" opacity="0.6" />
+  <path d="M 276.00 69.50 Q 276.00 73.00 279.50 73.00 Q 276.00 73.00 276.00 76.50 Q 276.00 73.00 272.50 73.00 Q 276.00 73.00 276.00 69.50 Z" fill="#8b5cf6" opacity="0.6" />
+  <path d="M 438.00 69.50 Q 438.00 73.00 441.50 73.00 Q 438.00 73.00 438.00 76.50 Q 438.00 73.00 434.50 73.00 Q 438.00 73.00 438.00 69.50 Z" fill="#8b5cf6" opacity="0.6" />
+  <path d="M 576.00 69.50 Q 576.00 73.00 579.50 73.00 Q 576.00 73.00 576.00 76.50 Q 576.00 73.00 572.50 73.00 Q 576.00 73.00 576.00 69.50 Z" fill="#8b5cf6" opacity="0.6" />
+  <path d="M 706.00 69.50 Q 706.00 73.00 709.50 73.00 Q 706.00 73.00 706.00 76.50 Q 706.00 73.00 702.50 73.00 Q 706.00 73.00 706.00 69.50 Z" fill="#8b5cf6" opacity="0.6" />
+
+  <!-- Stack badges -->
+  <g>
+    <rect x="24" y="56" width="108" height="34" rx="6" fill="#171325" stroke="#2d2449" stroke-width="1" />
+    <path d="M 55.00 67.00 Q 55.00 73.00 61.00 73.00 Q 55.00 73.00 55.00 79.00 Q 55.00 73.00 49.00 73.00 Q 55.00 73.00 55.00 67.00 Z" fill="#8b5cf6" /><circle cx="55" cy="73" r="2" fill="#171325" />
+    <text x="69" y="77" class="font-mono" font-size="10.5" font-weight="700" fill="#e2e8f0" letter-spacing="0.8">RUST</text>
+  </g>
+  <g>
+    <rect x="152" y="56" width="114" height="34" rx="6" fill="#171325" stroke="#2d2449" stroke-width="1" />
+    <path d="M 175 69 L 172 73 L 175 77 M 181 69 L 184 73 L 181 77" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="192" y="77" class="font-mono" font-size="10.5" font-weight="700" fill="#e2e8f0" letter-spacing="0.8">C / C++</text>
+  </g>
+  <g>
+    <rect x="286" y="56" width="142" height="34" rx="6" fill="#171325" stroke="#2d2449" stroke-width="1" />
+    <rect x="307" y="68" width="10" height="10" rx="1.5" fill="none" stroke="#c4b5fd" stroke-width="1.2" /><line x1="305" y1="73" x2="307" y2="73" stroke="#c4b5fd" stroke-width="1.2" /><line x1="317" y1="73" x2="319" y2="73" stroke="#c4b5fd" stroke-width="1.2" /><line x1="312" y1="66" x2="312" y2="68" stroke="#c4b5fd" stroke-width="1.2" /><line x1="312" y1="78" x2="312" y2="80" stroke="#c4b5fd" stroke-width="1.2" />
+    <text x="326" y="77" class="font-mono" font-size="10.5" font-weight="700" fill="#e2e8f0" letter-spacing="0.8">ESP32 / IOT</text>
+  </g>
+  <g>
+    <rect x="448" y="56" width="118" height="34" rx="6" fill="#171325" stroke="#2d2449" stroke-width="1" />
+    <path d="M 473 68 L 482 73 L 473 78 Z" fill="#8b5cf6" />
+    <text x="492" y="77" class="font-mono" font-size="10.5" font-weight="700" fill="#e2e8f0" letter-spacing="0.8">FFMPEG</text>
+  </g>
+  <g>
+    <rect x="586" y="56" width="110" height="34" rx="6" fill="#171325" stroke="#2d2449" stroke-width="1" />
+    <rect x="613" y="68" width="4.5" height="4.5" fill="#c4b5fd" /><rect x="619" y="68" width="4.5" height="4.5" fill="#c4b5fd" /><rect x="613" y="74" width="4.5" height="4.5" fill="#c4b5fd" /><rect x="619" y="74" width="4.5" height="4.5" fill="#c4b5fd" />
+    <text x="632" y="77" class="font-mono" font-size="10.5" font-weight="700" fill="#e2e8f0" letter-spacing="0.8">WIN32</text>
+  </g>
+  <g>
+    <rect x="716" y="56" width="110" height="34" rx="6" fill="#171325" stroke="#2d2449" stroke-width="1" />
+    <path d="M 743 69 L 747 73 L 743 77" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><line x1="749" y1="77" x2="753" y2="77" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" />
+    <text x="762" y="77" class="font-mono" font-size="10.5" font-weight="700" fill="#e2e8f0" letter-spacing="0.8">LINUX</text>
+  </g>
+</svg>

@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 240" width="850" height="240">
+  <defs>
+    <!-- Soft celestial corona glow filter -->
+    <filter id="corona-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur1" />
+      <feGaussianBlur stdDeviation="4" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Diamond bead flare glow filter -->
+    <filter id="flare-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Canvas background gradient: Obsidian to deep void -->
+    <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09080d" />
+      <stop offset="55%" stop-color="#0b0914" />
+      <stop offset="100%" stop-color="#0f0c1a" />
+    </linearGradient>
+
+    <!-- Ambient nebulae -->
+    <radialGradient id="nebula-purple" cx="80%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.16" />
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#09080d" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="nebula-dusk" cx="20%" cy="85%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#09080d" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Corona ring gradient around the eclipse -->
+    <radialGradient id="corona-ring" cx="44%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="18%" stop-color="#c4b5fd" stop-opacity="0.95" />
+      <stop offset="42%" stop-color="#8b5cf6" stop-opacity="0.85" />
+      <stop offset="70%" stop-color="#a855f7" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Moon surface gradient -->
+    <linearGradient id="moon-surface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0812" />
+      <stop offset="60%" stop-color="#09080d" />
+      <stop offset="100%" stop-color="#07060a" />
+    </linearGradient>
+
+    <!-- Border highlight gradient -->
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#26203a" />
+      <stop offset="50%" stop-color="#3d3261" />
+      <stop offset="100%" stop-color="#26203a" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'Consolas', 'JetBrains Mono', monospace; }
+    .font-serif { font-family: 'Georgia', serif; }
+    .font-sans { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; }
+
+    /* Twinkling star keyframe animations */
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.25; transform: scale(0.85); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    @keyframes twinkle-alt {
+      0%, 100% { opacity: 0.95; transform: scale(1.12); }
+      50% { opacity: 0.2; transform: scale(0.82); }
+    }
+    @keyframes twinkle-slow {
+      0%, 100% { opacity: 0.35; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.22); }
+    }
+    .star-twinkle-1 { animation: twinkle 3.2s ease-in-out infinite; }
+    .star-twinkle-2 { animation: twinkle-alt 4.1s ease-in-out infinite; }
+    .star-twinkle-3 { animation: twinkle-slow 2.7s ease-in-out infinite; }
+
+    /* Terminal cursor blink */
+    @keyframes blink {
+      0%, 49.9% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .cursor { animation: blink 1.05s steps(1) infinite; }
+
+    /* Corona breathing */
+    @keyframes corona-pulse {
+      0%, 100% { opacity: 0.78; }
+      50% { opacity: 0.96; }
+    }
+    .corona { animation: corona-pulse 4.8s ease-in-out infinite; }
+  </style>
+
+  <!-- Outer canvas card with 1px border -->
+  <rect x="0.5" y="0.5" width="849" height="239" rx="8" fill="url(#bg-canvas)" stroke="url(#border-glow)" stroke-width="1" />
+
+  <!-- Ambient nebulae -->
+  <rect x="0" y="0" width="850" height="240" rx="8" fill="url(#nebula-purple)" />
+  <rect x="0" y="0" width="850" height="240" rx="8" fill="url(#nebula-dusk)" />
+
+  <!-- Celestial grid background stars -->
+  <g fill="#3d3261" opacity="0.35">
+    <circle cx="510" cy="50" r="1" />
+    <circle cx="550" cy="90" r="1" />
+    <circle cx="630" cy="40" r="1" />
+    <circle cx="780" cy="110" r="1" />
+    <circle cx="820" cy="70" r="1" />
+    <circle cx="560" cy="210" r="1" />
+    <circle cx="680" cy="230" r="1" />
+    <circle cx="790" cy="190" r="1" />
+  </g>
+
+  <!-- RIGHT SIDE ARTWORK: LUNAR / SOLAR ECLIPSE -->
+  <g id="eclipse-artwork">
+    <!-- Orbital arcs -->
+    <ellipse cx="696" cy="120" rx="104" ry="46" transform="rotate(-22 696 120)" fill="none" stroke="#8b5cf6" stroke-opacity="0.28" stroke-width="1" stroke-dasharray="4 7" />
+    <ellipse cx="696" cy="120" rx="142" ry="62" transform="rotate(-12 696 120)" fill="none" stroke="#c4b5fd" stroke-opacity="0.16" stroke-width="1" stroke-dasharray="6 12" />
+    <ellipse cx="696" cy="120" rx="74" ry="32" transform="rotate(-32 696 120)" fill="none" stroke="#a855f7" stroke-opacity="0.24" stroke-width="1" stroke-dasharray="2 5" />
+
+    <!-- Orbital satellite points -->
+    <circle cx="598" cy="98" r="2.2" fill="#c4b5fd" />
+    <circle cx="786" cy="148" r="2.5" fill="#8b5cf6" />
+    <circle cx="738" cy="62" r="1.6" fill="#a855f7" />
+    <circle cx="638" cy="154" r="1.8" fill="#e2e8f0" />
+
+    <!-- Radiant Corona Outer Glow (Behind Moon) -->
+    <circle cx="690" cy="115" r="64" fill="url(#corona-ring)" filter="url(#corona-glow)" class="corona" />
+    <circle cx="690" cy="115" r="56" fill="url(#corona-ring)" opacity="0.9" />
+
+    <!-- Moon Body (Dark overlapping disc) -->
+    <circle cx="698" cy="122" r="49" fill="url(#moon-surface)" />
+    <!-- Secondary shadow contour -->
+    <circle cx="701" cy="124" r="48" fill="#08070d" opacity="0.95" />
+
+    <!-- Crescent Rim Highlight along upper-left crest -->
+    <path d="M 655 92 A 49 49 0 0 1 716 74" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" opacity="0.85" />
+
+    <!-- Diamond Ring / Solar Flare Bead at rim -->
+    <g transform="translate(654, 86)">
+      <circle cx="0" cy="0" r="5" fill="#ffffff" filter="url(#flare-glow)" />
+      <circle cx="0" cy="0" r="2.5" fill="#ffffff" />
+      <path d="M 0.00 -16.00 Q 0.00 0.00 16.00 0.00 Q 0.00 0.00 0.00 16.00 Q 0.00 0.00 -16.00 0.00 Q 0.00 0.00 0.00 -16.00 Z" fill="#ffffff" filter="url(#flare-glow)" opacity="0.9" />
+      <line x1="-20" y1="0" x2="20" y2="0" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.75" />
+      <line x1="0" y1="-20" x2="0" y2="20" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.75" />
+    </g>
+
+    <!-- Twinkling 4-point stars around eclipse -->
+    <path d="M 575.00 40.50 Q 575.00 48.00 582.50 48.00 Q 575.00 48.00 575.00 55.50 Q 575.00 48.00 567.50 48.00 Q 575.00 48.00 575.00 40.50 Z" fill="#c4b5fd" class="star-twinkle-1" style="transform-origin: 575.0px 48.0px;" />
+    <path d="M 610.00 189.00 Q 610.00 195.00 616.00 195.00 Q 610.00 195.00 610.00 201.00 Q 610.00 195.00 604.00 195.00 Q 610.00 195.00 610.00 189.00 Z" fill="#8b5cf6" class="star-twinkle-2" style="transform-origin: 610.0px 195.0px;" />
+    <path d="M 795.00 47.00 Q 795.00 55.00 803.00 55.00 Q 795.00 55.00 795.00 63.00 Q 795.00 55.00 787.00 55.00 Q 795.00 55.00 795.00 47.00 Z" fill="#c4b5fd" class="star-twinkle-3" style="transform-origin: 795.0px 55.0px;" />
+    <path d="M 815.00 168.50 Q 815.00 175.00 821.50 175.00 Q 815.00 175.00 815.00 181.50 Q 815.00 175.00 808.50 175.00 Q 815.00 175.00 815.00 168.50 Z" fill="#a855f7" class="star-twinkle-1" style="transform-origin: 815.0px 175.0px;" />
+    <path d="M 650.00 213.00 Q 650.00 218.00 655.00 218.00 Q 650.00 218.00 650.00 223.00 Q 650.00 218.00 645.00 218.00 Q 650.00 218.00 650.00 213.00 Z" fill="#c4b5fd" class="star-twinkle-2" style="transform-origin: 650.0px 218.0px;" />
+    <path d="M 745.00 20.00 Q 745.00 26.00 751.00 26.00 Q 745.00 26.00 745.00 32.00 Q 745.00 26.00 739.00 26.00 Q 745.00 26.00 745.00 20.00 Z" fill="#8b5cf6" class="star-twinkle-3" style="transform-origin: 745.0px 26.0px;" />
+    <path d="M 770.00 202.50 Q 770.00 208.00 775.50 208.00 Q 770.00 208.00 770.00 213.50 Q 770.00 208.00 764.50 208.00 Q 770.00 208.00 770.00 202.50 Z" fill="#e2e8f0" class="star-twinkle-1" style="transform-origin: 770.0px 208.0px;" />
+    <path d="M 535.00 130.50 Q 535.00 135.00 539.50 135.00 Q 535.00 135.00 535.00 139.50 Q 535.00 135.00 530.50 135.00 Q 535.00 135.00 535.00 130.50 Z" fill="#a855f7" class="star-twinkle-2" style="transform-origin: 535.0px 135.0px;" />
+    <path d="M 480.00 71.50 Q 480.00 75.00 483.50 75.00 Q 480.00 75.00 480.00 78.50 Q 480.00 75.00 476.50 75.00 Q 480.00 75.00 480.00 71.50 Z" fill="#94a3b8" class="star-twinkle-3" style="transform-origin: 480.0px 75.0px;" />
+    <path d="M 510.00 202.00 Q 510.00 205.00 513.00 205.00 Q 510.00 205.00 510.00 208.00 Q 510.00 205.00 507.00 205.00 Q 510.00 205.00 510.00 202.00 Z" fill="#8b5cf6" class="star-twinkle-1" style="transform-origin: 510.0px 205.0px;" />
+    <path d="M 825.00 101.00 Q 825.00 105.00 829.00 105.00 Q 825.00 105.00 825.00 109.00 Q 825.00 105.00 821.00 105.00 Q 825.00 105.00 825.00 101.00 Z" fill="#c4b5fd" class="star-twinkle-2" style="transform-origin: 825.0px 105.0px;" />
+    <path d="M 675.00 31.50 Q 675.00 35.00 678.50 35.00 Q 675.00 35.00 675.00 38.50 Q 675.00 35.00 671.50 35.00 Q 675.00 35.00 675.00 31.50 Z" fill="#c4b5fd" class="star-twinkle-3" style="transform-origin: 675.0px 35.0px;" />
+  </g>
+
+  <!-- LEFT SIDE TYPOGRAPHY & UI -->
+  <g id="hero-content">
+    <!-- Top eyebrow badge pill -->
+    <rect x="46" y="36" width="258" height="24" rx="12" fill="#13101e" stroke="#26203a" stroke-width="1" />
+    <path d="M 58.00 43.50 Q 58.00 48.00 62.50 48.00 Q 58.00 48.00 58.00 52.50 Q 58.00 48.00 53.50 48.00 Q 58.00 48.00 58.00 43.50 Z" fill="#8b5cf6" />
+    <text x="72" y="52.5" class="font-mono" font-size="9.5" font-weight="700" fill="#c4b5fd" letter-spacing="1.5">PHASE 01 // CELESTIAL ARCHITECTURE</text>
+
+    <!-- Main display title: CALY -->
+    <text x="46" y="112" class="font-serif" font-size="46" font-weight="700" fill="#f3e8ff" letter-spacing="6">CALY</text>
+    <!-- Celestial decorative flourish next to title -->
+    <path d="M 230.00 89.00 Q 230.00 96.00 237.00 96.00 Q 230.00 96.00 230.00 103.00 Q 230.00 96.00 223.00 96.00 Q 230.00 96.00 230.00 89.00 Z" fill="#8b5cf6" opacity="0.85" />
+    <path d="M 248.00 92.50 L 251.50 96.00 L 248.00 99.50 L 244.50 96.00 Z" fill="#a855f7" opacity="0.65" />
+
+    <!-- Subtitle: Systems Developer & Domain -->
+    <text x="47" y="145" class="font-sans" font-size="12.5" font-weight="600" fill="#c4b5fd" letter-spacing="2">SYSTEMS DEVELOPER  •  RUST &amp; EMBEDDED</text>
+
+    <!-- Terminal line container -->
+    <rect x="46" y="168" width="446" height="36" rx="6" fill="#13101e" stroke="#26203a" stroke-width="1" />
+    
+    <!-- Terminal line prompt & text -->
+    <text x="58" y="191" class="font-mono" font-size="11.5" letter-spacing="0.3">
+      <tspan fill="#8b5cf6" font-weight="700">&gt; </tspan>
+      <tspan fill="#94a3b8">crafting low-level audio, video, and hardware systems</tspan>
+    </text>
+    
+    <!-- Animated blinking block cursor -->
+    <rect x="452" y="179" width="7" height="15" rx="1" fill="#a855f7" class="cursor" />
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 44" width="850" height="44">
+  <defs>
+    <!-- Fading gradient lines from transparent to purple -->
+    <linearGradient id="div-fade-left" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#26203a" stop-opacity="0" />
+      <stop offset="50%" stop-color="#26203a" stop-opacity="0.8" />
+      <stop offset="85%" stop-color="#3d3261" stop-opacity="1" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="div-fade-right" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="1" />
+      <stop offset="15%" stop-color="#3d3261" stop-opacity="1" />
+      <stop offset="50%" stop-color="#26203a" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#26203a" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'Consolas', 'JetBrains Mono', monospace; }
+  </style>
+
+  <!-- Left fading rule -->
+  <line x1="30" y1="22" x2="256" y2="22" stroke="url(#div-fade-left)" stroke-width="1.2" />
+
+  <!-- Left constellation emblem -->
+  <path d="M 268.00 19.00 L 271.00 22.00 L 268.00 25.00 L 265.00 22.00 Z" fill="#8b5cf6" />
+  <path d="M 288.00 16.50 Q 288.00 22.00 293.50 22.00 Q 288.00 22.00 288.00 27.50 Q 288.00 22.00 282.50 22.00 Q 288.00 22.00 288.00 16.50 Z" fill="#c4b5fd" />
+  <path d="M 304.00 20.00 L 306.00 22.00 L 304.00 24.00 L 302.00 22.00 Z" fill="#a855f7" />
+
+  <!-- Center typography -->
+  <text x="425" y="26" text-anchor="middle" class="font-mono" font-size="10.5" font-weight="700" fill="#c4b5fd" letter-spacing="3">FEATURED CONSTELLATIONS</text>
+
+  <!-- Top and bottom celestial accents -->
+  <path d="M 425.00 6.80 L 427.20 9.00 L 425.00 11.20 L 422.80 9.00 Z" fill="#8b5cf6" opacity="0.75" />
+  <path d="M 425.00 32.80 L 427.20 35.00 L 425.00 37.20 L 422.80 35.00 Z" fill="#8b5cf6" opacity="0.75" />
+
+  <!-- Right constellation emblem -->
+  <path d="M 546.00 20.00 L 548.00 22.00 L 546.00 24.00 L 544.00 22.00 Z" fill="#a855f7" />
+  <path d="M 562.00 16.50 Q 562.00 22.00 567.50 22.00 Q 562.00 22.00 562.00 27.50 Q 562.00 22.00 556.50 22.00 Q 562.00 22.00 562.00 16.50 Z" fill="#c4b5fd" />
+  <path d="M 582.00 19.00 L 585.00 22.00 L 582.00 25.00 L 579.00 22.00 Z" fill="#8b5cf6" />
+
+  <!-- Right fading rule -->
+  <line x1="594" y1="22" x2="820" y2="22" stroke="url(#div-fade-right)" stroke-width="1.2" />
+</svg>
