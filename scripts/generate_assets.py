@@ -19,7 +19,6 @@ def diamond_path(cx, cy, r):
 # 1. banner.svg (850x240)
 # ---------------------------------------------------------------------------
 def generate_banner():
-    # Twinkling stars: (cx, cy, r, anim_class, fill)
     stars = [
         (575, 48, 7.5, "star-twinkle-1", "#c4b5fd"),
         (610, 195, 6.0, "star-twinkle-2", "#8b5cf6"),
@@ -428,11 +427,75 @@ def generate_projects_grid():
     return svg
 
 # ---------------------------------------------------------------------------
-# 4. stack-footer.svg (850x110)
+# 4. btn-eclipse.svg (240x40)
+# ---------------------------------------------------------------------------
+def generate_btn_eclipse():
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" width="240" height="40">
+  <defs>
+    <linearGradient id="btn-bg-eclipse" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181427" />
+      <stop offset="100%" stop-color="#110e1a" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono {{ font-family: 'Consolas', 'JetBrains Mono', monospace; }}
+  </style>
+
+  <!-- Button Card Surface (240x40) -->
+  <rect x="1" y="1" width="238" height="38" rx="5" fill="url(#btn-bg-eclipse)" stroke="#3d3261" stroke-width="1" />
+
+  <!-- Subtle Top Highlight Line -->
+  <line x1="8" y1="2" x2="232" y2="2" stroke="#8b5cf6" stroke-opacity="0.35" stroke-width="1" />
+
+  <!-- Left Mini Vector Icon: Crescent Moon (#a855f7) -->
+  <path d="M 28 14.5 A 5.5 5.5 0 1 0 33.5 20 A 4.3 4.3 0 1 1 28 14.5 Z" fill="#a855f7" />
+
+  <!-- Label Text -->
+  <text x="42" y="24" class="font-mono" font-size="11" font-weight="700" fill="#e2e8f0" letter-spacing="1.5">ECLIPSE REPOSITORY</text>
+
+  <!-- Right Mini Vector Icon: Diagonal External Link Arrow (#c4b5fd) -->
+  <path d="M 197 23 L 204 16 M 199 16 L 204 16 L 204 21" fill="none" stroke="#c4b5fd" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>"""
+    return svg
+
+# ---------------------------------------------------------------------------
+# 5. btn-vesper.svg (240x40)
+# ---------------------------------------------------------------------------
+def generate_btn_vesper():
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" width="240" height="40">
+  <defs>
+    <linearGradient id="btn-bg-vesper" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181427" />
+      <stop offset="100%" stop-color="#110e1a" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono {{ font-family: 'Consolas', 'JetBrains Mono', monospace; }}
+  </style>
+
+  <!-- Button Card Surface (240x40) -->
+  <rect x="1" y="1" width="238" height="38" rx="5" fill="url(#btn-bg-vesper)" stroke="#3d3261" stroke-width="1" />
+
+  <!-- Subtle Top Highlight Line -->
+  <line x1="8" y1="2" x2="232" y2="2" stroke="#8b5cf6" stroke-opacity="0.35" stroke-width="1" />
+
+  <!-- Left Mini Vector Icon: Small 4-Point Star (#c4b5fd) -->
+  <path d="{star_path(30, 20, 5.5)}" fill="#c4b5fd" />
+
+  <!-- Label Text -->
+  <text x="45" y="24" class="font-mono" font-size="11" font-weight="700" fill="#e2e8f0" letter-spacing="1.5">VESPER REPOSITORY</text>
+
+  <!-- Right Mini Vector Icon: Diagonal External Link Arrow (#c4b5fd) -->
+  <path d="M 195 23 L 202 16 M 197 16 L 202 16 L 202 21" fill="none" stroke="#c4b5fd" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>"""
+    return svg
+
+# ---------------------------------------------------------------------------
+# 6. stack-footer.svg (850x110)
 # ---------------------------------------------------------------------------
 def generate_stack_footer():
-    # 6 pills across width 802 (x=24 to 826)
-    # Perfectly calculated centering for icons + labels
     pills = [
         {"x": 24, "w": 108, "label": "RUST", "type": "rust", "ix": 55, "lx": 69},
         {"x": 152, "w": 114, "label": "C / C++", "type": "c", "ix": 178, "lx": 192},
@@ -442,7 +505,6 @@ def generate_stack_footer():
         {"x": 716, "w": 110, "label": "LINUX", "type": "linux", "ix": 748, "lx": 762},
     ]
     
-    # Separator 4-point stars at gaps:
     sep_xs = [142, 276, 438, 576, 706]
     separators = []
     for sx in sep_xs:
@@ -522,7 +584,7 @@ def generate_stack_footer():
     return svg
 
 # ---------------------------------------------------------------------------
-# 5. README.md
+# 7. README.md
 # ---------------------------------------------------------------------------
 def generate_readme():
     return """<p align="center">
@@ -538,9 +600,13 @@ def generate_readme():
 </p>
 
 <p align="center">
-  <a href="https://github.com/Caly-sys/Eclipse"><b>[ ECLIPSE REPOSITORY ]</b></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/Caly-sys/vesper"><b>[ VESPER REPOSITORY ]</b></a>
+  <a href="https://github.com/Caly-sys/Eclipse">
+    <img src="./assets/btn-eclipse.svg" alt="Eclipse Repository" height="40" />
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/Caly-sys/vesper">
+    <img src="./assets/btn-vesper.svg" alt="Vesper Repository" height="40" />
+  </a>
 </p>
 
 <br />
@@ -548,24 +614,6 @@ def generate_readme():
 <p align="center">
   <img src="./assets/stack-footer.svg" alt="Core Domains &amp; Arsenal Stack Footer" width="100%" />
 </p>
-
-<br />
-
-### Architectural Philosophy
-
-```
-  +-- [ ORBITAL SPECIFICATION ] ------------------------------------+
-  |                                                                 |
-  |  * Zero-Cost Abstractions : Pure Rust core pipelines            |
-  |  * Low-Latency Multimedia : Direct3D 11, rodio, and libmpv      |
-  |  * Bare-Metal Precision   : ESP32 telemetry and Win32 interop   |
-  |                                                                 |
-  +-----------------------------------------------------------------+
-```
-
-- **Lossless Audio Engineering**: High-efficiency desktop audio extraction, real-time FFT spectrum analysis, and local-first music management.
-- **Hardware Acceleration**: Hardware-accelerated video decoding, subtitle parsing, and low-latency frame pipelines on native platforms.
-- **Embedded Telemetry**: Microcontroller firmware, sensor telemetry, and IoT dashboard communication protocols.
 
 <br />
 
@@ -583,6 +631,8 @@ def main():
         os.path.join(assets_dir, "banner.svg"): generate_banner(),
         os.path.join(assets_dir, "divider.svg"): generate_divider(),
         os.path.join(assets_dir, "projects-grid.svg"): generate_projects_grid(),
+        os.path.join(assets_dir, "btn-eclipse.svg"): generate_btn_eclipse(),
+        os.path.join(assets_dir, "btn-vesper.svg"): generate_btn_vesper(),
         os.path.join(assets_dir, "stack-footer.svg"): generate_stack_footer(),
         os.path.join(repo_dir, "README.md"): generate_readme(),
     }
@@ -597,12 +647,6 @@ def main():
                 print(f"  [XML VALID] {os.path.basename(path)}")
             except ET.ParseError as e:
                 print(f"  [XML ERROR] {os.path.basename(path)}: {e}")
-
-    # Remove temporary preview.html if present
-    preview_path = os.path.join(repo_dir, "preview.html")
-    if os.path.exists(preview_path):
-        os.remove(preview_path)
-        print("Removed temporary preview.html")
 
 if __name__ == "__main__":
     main()

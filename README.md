@@ -11,9 +11,13 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Caly-sys/Eclipse"><b>[ ECLIPSE REPOSITORY ]</b></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/Caly-sys/vesper"><b>[ VESPER REPOSITORY ]</b></a>
+  <a href="https://github.com/Caly-sys/Eclipse">
+    <img src="./assets/btn-eclipse.svg" alt="Eclipse Repository" height="40" />
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/Caly-sys/vesper">
+    <img src="./assets/btn-vesper.svg" alt="Vesper Repository" height="40" />
+  </a>
 </p>
 
 <br />
@@ -21,10 +25,6 @@
 <p align="center">
   <img src="./assets/stack-footer.svg" alt="Core Domains &amp; Arsenal Stack Footer" width="100%" />
 </p>
-
-<br />
-
-
 
 <br />
 

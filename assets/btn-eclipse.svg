@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" width="240" height="40">
+  <defs>
+    <linearGradient id="btn-bg-eclipse" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181427" />
+      <stop offset="100%" stop-color="#110e1a" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'Consolas', 'JetBrains Mono', monospace; }
+  </style>
+
+  <!-- Button Card Surface (240x40) -->
+  <rect x="1" y="1" width="238" height="38" rx="5" fill="url(#btn-bg-eclipse)" stroke="#3d3261" stroke-width="1" />
+
+  <!-- Subtle Top Highlight Line -->
+  <line x1="8" y1="2" x2="232" y2="2" stroke="#8b5cf6" stroke-opacity="0.35" stroke-width="1" />
+
+  <!-- Left Mini Vector Icon: Crescent Moon (#a855f7) -->
+  <path d="M 28 14.5 A 5.5 5.5 0 1 0 33.5 20 A 4.3 4.3 0 1 1 28 14.5 Z" fill="#a855f7" />
+
+  <!-- Label Text -->
+  <text x="42" y="24" class="font-mono" font-size="11" font-weight="700" fill="#e2e8f0" letter-spacing="1.5">ECLIPSE REPOSITORY</text>
+
+  <!-- Right Mini Vector Icon: Diagonal External Link Arrow (#c4b5fd) -->
+  <path d="M 197 23 L 204 16 M 199 16 L 204 16 L 204 21" fill="none" stroke="#c4b5fd" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
