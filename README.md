@@ -24,21 +24,7 @@
 
 <br />
 
-### Architectural Philosophy
 
-```
-  +-- [ ORBITAL SPECIFICATION ] ------------------------------------+
-  |                                                                 |
-  |  * Zero-Cost Abstractions : Pure Rust core pipelines            |
-  |  * Low-Latency Multimedia : Direct3D 11, rodio, and libmpv      |
-  |  * Bare-Metal Precision   : ESP32 telemetry and Win32 interop   |
-  |                                                                 |
-  +-----------------------------------------------------------------+
-```
-
-- **Lossless Audio Engineering**: High-efficiency desktop audio extraction, real-time FFT spectrum analysis, and local-first music management.
-- **Hardware Acceleration**: Hardware-accelerated video decoding, subtitle parsing, and low-latency frame pipelines on native platforms.
-- **Embedded Telemetry**: Microcontroller firmware, sensor telemetry, and IoT dashboard communication protocols.
 
 <br />
 
